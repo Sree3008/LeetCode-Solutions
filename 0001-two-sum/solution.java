@@ -1,34 +1,18 @@
-import java.util.*;
-
-public class Solution {
+class Solution {
     public int[] twoSum(int[] nums, int target) {
-        Map<Integer, Integer> map = new HashMap<>();
-        for (int i = 0; i < nums.length; i++) {
-            int complement = target - nums[i];
-            if (map.containsKey(complement)) {
-                return new int[] { map.get(complement), i };
-            }
-          
-            map.put(nums[i], i);
+        ArrayList<Integer> list=new ArrayList<Integer>();
+        for(int i=0;i<nums.length;i++){
+            for(int j=i+1;j<nums.length;j++)
+                if(nums[i]+nums[j]==target){
+                    list.add(i);
+                    list.add(j);
+                    break;
+                }
         }
-        throw new IllegalArgumentException("No two sum solution");
-    }
-    
-    public static void main(String[] args) {
-        Scanner ob = new Scanner(System.in);
-        
-        int n = ob.nextInt();
-        int[] nums = new int[n];
-        for (int i = 0; i < n; i++) {
-            nums[i] = ob.nextInt();
+        int[] arr = new int[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            arr[i] = list.get(i);
         }
-        int target = ob.nextInt();
-        Solution solution = new Solution();
-        int[] result = solution.twoSum(nums, target);
-        
-        System.out.println(Arrays.toString(result));
-        
-        ob.close();
+        return arr;
     }
 }
-
