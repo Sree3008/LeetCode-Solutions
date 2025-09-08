@@ -1,28 +1,25 @@
-
-        
 class Solution {
-        public int romanToInt(String s) {
-                Map<Character, Integer> m = new HashMap<>();
-                        
-                                m.put('I', 1);
-                                        m.put('V', 5);
-                                                m.put('X', 10);
-                                                        m.put('L', 50);
-                                                                m.put('C', 100);
-                                                                        m.put('D', 500);
-                                                                                m.put('M', 1000);
-                                                                                        
-                                                                                                int ans = 0;
-                                                                                                        
-                                                                                                                for (int i = 0; i < s.length(); i++) {
-                                                                                                                            if (i < s.length() - 1 && m.get(s.charAt(i)) < m.get(s.charAt(i + 1))) {
-                                                                                                                                            ans -= m.get(s.charAt(i));
-                                                                                                                                                        } else {
-                                                                                                                                                                        ans += m.get(s.charAt(i));
-                                                                                                                                                                                    }
-                                                                                                                                                                                            }
-                                                                                                                                                                                                    
-                                                                                                                                                                                                            return ans;
-                                                                                                                                                                                                                }
-                                                                                                                                                                                                                }
+    public int romanToInt(String s) {
+        Map<Character, Integer> map = new HashMap<>();
+        map.put('I', 1);
+        map.put('V', 5);
+        map.put('X', 10);
+        map.put('L', 50);
+        map.put('C', 100);
+        map.put('D', 500);
+        map.put('M', 1000);
 
+        int sum = 0;
+        char[] arr = s.toCharArray();
+        for(int i=0;i<arr.length;i++){
+            int value=map.get(arr[i]);
+            if(i+1<arr.length&&value<map.get(arr[i+1])){
+                sum=sum-value;
+            }
+            else{
+                sum=sum+value;
+            }
+        }
+        return sum;
+    }
+}
