@@ -1,22 +1,12 @@
-public class Solution {
+class Solution {
     public boolean isPalindrome(int x) {
-        if (x < 0 || (x % 10 == 0 && x != 0)) {
-            return false;
-        }
+        String s=String.valueOf(x);
+        StringBuilder sb=new StringBuilder(s);
 
-        int reversedHalf = 0;
-        while (x > reversedHalf) {
-            reversedHalf = reversedHalf * 10 + x % 10;
-            x /= 10;
+        if(s.equals(new String(sb.reverse()))){
+            return true;
         }
-
-        return x == reversedHalf || x == reversedHalf / 10;
-    }
-    public static void main(String[] args) {
-        Solution solution = new Solution();
-        System.out.println(solution.isPalindrome(121)); 
-        System.out.println(solution.isPalindrome(-121)); 
-        System.out.println(solution.isPalindrome(10)); 
+        return false;
+        
     }
 }
-
