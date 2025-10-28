@@ -17,22 +17,19 @@ public class Solution {
     public static void main(String[] args) {
         Solution sol = new Solution();
         
-        // Example 1
         int[] nums1 = {3, 2, 2, 3};
         int val1 = 3;
         int k1 = sol.removeElement(nums1, val1);
-        System.out.println("Output: " + k1); // Output: 2
+        System.out.println("Output: " + k1); 
         System.out.print("Array: ");
         for (int i = 0; i < k1; i++) {
             System.out.print(nums1[i] + " ");
         }
         System.out.println();
-        
-        // Example 2
         int[] nums2 = {0, 1, 2, 2, 3, 0, 4, 2};
         int val2 = 2;
         int k2 = sol.removeElement(nums2, val2);
-        System.out.println("Output: " + k2); // Output: 5
+        System.out.println("Output: " + k2); 
         System.out.print("Array: ");
         for (int i = 0; i < k2; i++) {
             System.out.print(nums2[i] + " ");
@@ -40,4 +37,3 @@ public class Solution {
         System.out.println();
     }
 }
-
