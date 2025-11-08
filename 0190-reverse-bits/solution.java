@@ -1,9 +1,17 @@
 class Solution {
     public int reverseBits(int n) {
-        String str = String.format("%32s", Integer.toBinaryString(n)).replace(' ', '0');
-        StringBuilder sb=new StringBuilder(str);
-        String s=sb.reverse().toString();
-        int res=(int) Long.parseLong(s,2);
+        int res = 0,c = 0;
+        while(n>0){
+            if((n&1)==1)
+                res|=1;
+            res<<=1;
+            n>>=1;
+            c++;
+        }
+        while(c<31){
+            res<<=1;
+            c++;
+        }
         return res;
     }
 }
