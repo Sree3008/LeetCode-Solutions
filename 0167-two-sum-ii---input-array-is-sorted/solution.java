@@ -1,12 +1,23 @@
 class Solution {
-    public int[] twoSum(int[] numbers, int target) {
-        for(int i=0;i<=numbers.length;i++){
-            for(int j=i+1;j<numbers.length;j++){
-                if((numbers[i]+numbers[j])==target){
-                    return new int[]{i+1,j+1};
-                }
+    public int[] twoSum(int[] nums, int target) {
+        int left=0;
+        int right=nums.length-1;
+        Arrays.sort(nums);
+        int[] num=new int[2];
+        while(left<right){
+            int k=nums[left]+nums[right];
+            if(k==target){
+                num[0]=left+1;
+                num[1]=right+1;
+                return num;
+            }
+            else if(k<target){
+                left++;
+            }
+            else{
+                right--;
             }
         }
-        return new int[]{-1,-1};
+        return new int[]{};
     }
 }
