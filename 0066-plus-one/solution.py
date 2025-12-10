@@ -3,11 +3,5 @@ class Solution:
         s=''
         for i in digits:
             s=s+str(i)
-        res=int(s)+1
-        st=str(res)
-        list1=[]
-        while res!=0:
-            m=res%10
-            list1.append(m)
-            res=res//10
-        return list1[::-1]
+        x=int(s)+1
+        return [int(i) for i in str(x)]
