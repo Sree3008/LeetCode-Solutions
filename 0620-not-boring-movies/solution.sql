@@ -11,4 +11,3 @@ WHERE
     AND description != 'boring'
 ORDER BY 
     rating DESC;
-
