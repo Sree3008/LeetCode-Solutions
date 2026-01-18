@@ -14,4 +14,3 @@ FROM (
     HAVING 
         COUNT(*) = 1
 ) AS single_nums;
-
