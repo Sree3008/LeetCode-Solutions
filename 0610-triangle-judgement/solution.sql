@@ -9,4 +9,3 @@ SELECT
     END AS triangle
 FROM 
     Triangle;
-
