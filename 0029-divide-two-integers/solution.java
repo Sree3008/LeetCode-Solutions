@@ -1,3 +1,4 @@
+
 public class Solution {
     public int divide(int dividend, int divisor) {
         if(dividend == divisor) return 1;
